@@ -1,104 +1,105 @@
 <!DOCTYPE html>
 <html>
-	<head>
-		<meta charset="UTF-8">
-		<meta name="description" content="Krasiyan - I code">
-		<meta name="keywords" content="krasiyan nedelchev">
-		<meta name="author" content="Krasiyan Nedelchev">
-		<title>Krasiyan Nedelchev</title>
-		<link href='https://fonts.googleapis.com/css?family=Tinos:700' rel='stylesheet' type='text/css'>
-		<style>
-			body, html {
-				height: 100%
-			}
-			#wrapper {
-				display: table;
-				width: 100%;
-				height: 100%;
-			}
-			#content {
-				margin: 0 auto;
-				display: table-cell;
-				vertical-align: middle;
-				text-align: center;
-			}
-			.big, .small {
-				font-family: 'Tinos';
-				font-weight: 700;
-				display: block;
-				margin: 0;
-			}
-			.big {
-				font-size: 350px;
-			}
-			.small {
-				font-size: 200px;
-			}
-			a {
-				color: black;
-				text-decoration: none;
-				margin: 0 10px;
-				display: inline-block;
-			}
-			#i:hover, #i.mhover {
-				color: #0077B5;
-			}
-			#c:hover, #c.mhover  {
-				color: #ED1C24;
-			}
-			#o:hover, #o.mhover  {
-				color: #767676;
-			}
-			#d:hover, #d.mhover  {
-				color: transparent;
-				background-image: url(me.png);
-				background-image:
-					linear-gradient(transparent, transparent),
-					url(me.svg);
-				background-repeat: no-repeat;
-				background-position: center 30%;
-				background-size: 100% ;
-			}
-			#e:hover, #e.mhover {
-				color: #34A853;
-			}
-		</style>
-		<script>
-		  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
-		  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
-		  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
-		  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  <head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Krasiyan - I code">
+    <meta name="keywords" content="krasiyan nedelchev">
+    <meta name="author" content="Krasiyan Nedelchev">
+    <title>Krasiyan Nedelchev</title>
+    <link href='https://fonts.googleapis.com/css?family=Tinos:700' rel='stylesheet' type='text/css'>
+    <style>
+      body, html {
+        height: 100%;
+        overflow: hidden;
+      }
+      #wrapper {
+        display: table;
+        width: 100%;
+        height: 100%;
+      }
+      #content {
+        margin: 0 auto;
+        display: table-cell;
+        vertical-align: middle;
+        text-align: center;
+      }
+      .big, .small {
+        font-family: 'Tinos';
+        font-weight: 700;
+        display: block;
+        margin: 0;
+      }
+      .big {
+        font-size: 350px;
+      }
+      .small {
+        font-size: 200px;
+      }
+      a {
+        color: black;
+        text-decoration: none;
+        margin: 0 10px;
+        display: inline-block;
+      }
+      #i:hover, #i.mhover {
+        color: #0077B5;
+      }
+      #c:hover, #c.mhover  {
+        color: #ED1C24;
+      }
+      #o:hover, #o.mhover  {
+        color: #767676;
+      }
+      #d:hover, #d.mhover  {
+        color: transparent;
+        background-image: url(me.png);
+        background-image:
+          linear-gradient(transparent, transparent),
+          url(me.svg);
+        background-repeat: no-repeat;
+        background-position: center 30%;
+        background-size: 100% ;
+      }
+      #e:hover, #e.mhover {
+        color: #34A853;
+      }
+    </style>
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
 
-		  ga('create', 'UA-74062534-1', 'auto');
-		  ga('send', 'pageview');
+      ga('create', 'UA-74062534-1', 'auto');
+      ga('send', 'pageview');
 
-		</script>
-	</head>
-	<body>
-		<div id="wrapper">
-			<div id="content">
-				<p class="big"><a href="https://linkedin.com/in/krasiyannedelchev" target="_blank" title="LinkedIn" id="i">I</a></p>
-				<p class="small">
-					<a href="http://camplight.net" title="Camplight" target="_blank" id="c">C</a><!--
-					--><a href="https://github.com/krasiyan" target="_blank" title="Github" id="o">O</a><!--
-					--><a href="#" target="_blank" title="I code" id="d">D</a><!--
-					--><a href="mailto:hello@krasiyan.com" target="_blank" title="Email" id="e">E</a>
-				</p>
-			</div>
-		</div>
-		<script type="text/javascript">
-			var animaion = function() {
-				var letters = ["i", "c", "o", "d", "e"];
-				var idx = 0;
-				var nextLetter = function() {
-					document.getElementById(letters[idx]).className = "mhover";
-					var prevIdx = (idx == 0 ? letters.length - 1 : idx - 1);
-					document.getElementById(letters[prevIdx]).className = "";
-					idx = (idx == letters.length - 1 ? 0 : idx + 1);
-				};
-				setInterval(nextLetter, 1300);
-			};
-			setTimeout(animaion, 1300);
-		</script>
-	</body>
+    </script>
+  </head>
+  <body>
+    <div id="wrapper">
+      <div id="content">
+        <p class="big"><a href="https://linkedin.com/in/krasiyannedelchev" target="_blank" title="LinkedIn" id="i">I</a></p>
+        <p class="small">
+          <a href="http://camplight.net" title="Camplight" target="_blank" id="c">C</a><!--
+          --><a href="https://github.com/krasiyan" target="_blank" title="Github" id="o">O</a><!--
+          --><a href="#" title="I code" id="d">D</a><!--
+          --><a href="mailto:hello@krasiyan.com" target="_blank" title="Email" id="e">E</a>
+        </p>
+      </div>
+    </div>
+    <script type="text/javascript">
+      var animaion = function() {
+        var letters = ["i", "c", "o", "d", "e"];
+        var idx = 0;
+        var nextLetter = function() {
+          document.getElementById(letters[idx]).className = "mhover";
+          var prevIdx = (idx == 0 ? letters.length - 1 : idx - 1);
+          document.getElementById(letters[prevIdx]).className = "";
+          idx = (idx == letters.length - 1 ? 0 : idx + 1);
+        };
+        setInterval(nextLetter, 1300);
+      };
+      setTimeout(animaion, 1300);
+    </script>
+  </body>
 </html>

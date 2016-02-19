@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<meta name="description" content="Krasiyan - I code">
+		<meta name="keywords" content="krasiyan nedelchev">
+		<meta name="author" content="Krasiyan Nedelchev">
+		<title>Krasiyan Nedelchev</title>
+		<link href='https://fonts.googleapis.com/css?family=Inconsolata:700' rel='stylesheet' type='text/css'>
+		<style>
+			#wrapper {
+				display: table;
+				height: 100%;
+				margin: 0 auto;
+			}
+			#content {
+				display: table-cell;
+				vertical-align: middle;
+				text-align: center;
+			}
+			.big {
+				font-family: 'Inconsolata';
+				font-size: 450px;
+				font-weight: 700;
+				margin: 0;
+				display: block;
+			}
+			.small {
+				font-family: 'Inconsolata';
+				font-size: 250px;
+				font-weight: 700;
+				margin: 0;
+				display: block;
+				vertical-align: baseline;
+			}
+			a {
+				color: black;
+				text-decoration: none;
+				margin: 0 12px;
+			}
+			#i:hover, #i.mhover {
+				color: #0077B5;
+			}
+			#c:hover, #c.mhover  {
+				color: #ED1C24;
+			}
+			#o:hover, #o.mhover  {
+				color: #767676;
+			}
+			#d:hover, #d.mhover  {
+				color: #F2A60C;
+			}
+			#e:hover, #e.mhover {
+				color: #34A853;
+			}
+			#photo {
+				height: 100px;
+				vertical-align: text-bottom;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrapper">
+			<div id="content">
+				<span class="big"><a href="https://linkedin.com/in/krasiyannedelchev" target="_blank" title="LinkedIn" id="i">I</a></span>
+				<span class="small">
+					<a href="http://camplight.net" title="Camplight" target="_blank" id="c">C</a><!--
+					--><a href="https://github.com/krasiyan" target="_blank" title="Github" id="o">O</a><!--
+					--><a href="#" target="_blank" title="" id="d">D</a><!--
+					--><a href="mailto:hello@krasiyan.com" target="_blank" title="Email" id="e">E</a>
+				</span>
+			</div>
+		</div>
+		<script type="text/javascript">
+			var animaion = function() {
+				var letters = ["i", "c", "o", "d", "e"];
+				var idx = 0;
+				var interval = 1000;
+				var nextLetter = function() {
+					document.getElementById(letters[idx]).className = "mhover";
+					var prevIdx = idx - 1;
+					if (prevIdx == -1) {
+						prevIdx = letters.length - 1;
+					}
+					document.getElementById(letters[prevIdx]).className = "";
+					idx ++;
+					if (idx == letters.length) {
+						idx = 0;
+					}
+				}
+				setInterval(nextLetter, interval);
+			};
+			setTimeout(animaion, 1300);
+		</script>
+	</body>
+</html>

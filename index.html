@@ -23,17 +23,19 @@
         vertical-align: middle;
         text-align: center;
       }
-      .big, .small {
+      .top, .bottom {
         font-family: 'Tinos';
         font-weight: 700;
         display: block;
         margin: 0;
+        position: relative;
+        top: 0px;
       }
-      .big {
-        font-size: 350px;
+      .top {
+        font-size: 28vh;
       }
-      .small {
-        font-size: 200px;
+      .bottom {
+        font-size: 14vh;
       }
       a {
         color: black;
@@ -63,6 +65,43 @@
       #e:hover, #e.mhover {
         color: #34A853;
       }
+      body.rotate #i {
+        -webkit-transform: rotate(90deg);
+        -moz-transform: rotate(90deg);
+        -ms-transform: rotate(90deg);
+        -o-transform: rotate(90deg);
+        transform: rotate(90deg);
+        -webkit-transition: transform 1s ease-in-out;
+        -moz-transition: transform 1s ease-in-out;
+        -ms-transition: transform 1s ease-in-out;
+        -o-transition: transform 1s ease-in-out;
+        transition: transform 1s ease-in-out;
+      }
+      body.move .top, body.move .bottom  {
+        -webkit-transition: top 0.8s linear;
+        -moz-transition: top 0.8s linear;
+        -ms-transition: top 0.8s linear;
+        -o-transition: top 0.8s linear;
+        transition: top 0.8s linear;
+      }
+      body.move .top {
+        top: 14vh;
+      }
+      body.move .bottom {
+        top: -22vh;
+      }
+      body.scale #i {
+        -webkit-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
+        -moz-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
+        -ms-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
+        -o-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
+        transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
+        -webkit-transition: transform 1s ease-in-out;
+        -moz-transition: transform 1s ease-in-out;
+        -ms-transition: transform 1s ease-in-out;
+        -o-transition: transform 1s ease-in-out;
+        transition: transform 1s ease-in-out;
+      }
     </style>
     <script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -72,14 +111,15 @@
 
       ga('create', 'UA-74062534-1', 'auto');
       ga('send', 'pageview');
-
     </script>
   </head>
   <body>
     <div id="wrapper">
       <div id="content">
-        <p class="big"><a href="https://www.linkedin.com/in/krasiyan" target="_blank" title="LinkedIn" id="i">I</a></p>
-        <p class="small">
+        <p class="top">
+          <a href="https://www.linkedin.com/in/krasiyan" target="_blank" title="LinkedIn" id="i">I</a>
+        </p>
+        <p class="bottom">
           <a href="http://camplight.net" title="Camplight" target="_blank" id="c">C</a><!--
           --><a href="https://github.com/krasiyan" target="_blank" title="Github" id="o">O</a><!--
           --><a href="#" title="I code" id="d">D</a><!--
@@ -88,18 +128,39 @@
       </div>
     </div>
     <script type="text/javascript">
-      var animaion = function() {
-        var letters = ["i", "c", "o", "d", "e"];
-        var idx = 0;
-        var nextLetter = function() {
-          document.getElementById(letters[idx]).className = "mhover";
-          var prevIdx = (idx == 0 ? letters.length - 1 : idx - 1);
-          document.getElementById(letters[prevIdx]).className = "";
-          idx = (idx == letters.length - 1 ? 0 : idx + 1);
-        };
-        setInterval(nextLetter, 1300);
+      function getRandomNumberInRange(min, max) {
+        return Math.floor(Math.random() * (max - min + 1)) + min;
       };
-      setTimeout(animaion, 1300);
+
+      var animateStep = function(animateClass) {
+        return function() {
+          document.body.className += " " + animateClass;
+        }
+      }
+      var keystrokes = function() {
+        var letters = ["i", "c", "o", "d", "e"];
+        var maxDuration = 280;
+        var minDuration = 200;
+        var duration = maxDuration;
+        var idx = 0;
+        var prevIdx = 0;
+
+        var nextLetter = function() {
+          idx = getRandomNumberInRange(0, letters.length - 1);
+          document.getElementById(letters[idx]).className = "mhover";
+          document.getElementById(letters[prevIdx]).className = "";
+          prevIdx = idx;
+
+          duration = getRandomNumberInRange(minDuration, maxDuration);
+          clearInterval(nextLetterInterval);
+          nextLetterInterval = setInterval(nextLetter, duration);
+        };
+        var nextLetterInterval = setInterval(nextLetter, duration);
+      };
+      setTimeout(animateStep("rotate"), 1000);
+      setTimeout(animateStep("move"), 2000);
+      setTimeout(animateStep("scale"), 3000);
+      setTimeout(keystrokes, 4000);
     </script>
   </body>
 </html>

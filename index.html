@@ -71,7 +71,7 @@
           url(me.svg);
         background-repeat: no-repeat;
         background-position: center 30%;
-        background-size: 100% ;
+        background-size: 100%;
       }
       #e:hover, #e.mhover {
         color: #34A853;
@@ -82,18 +82,18 @@
         -ms-transform: rotate(90deg);
         -o-transform: rotate(90deg);
         transform: rotate(90deg);
-        -webkit-transition: transform 1s ease-in-out;
-        -moz-transition: transform 1s ease-in-out;
-        -ms-transition: transform 1s ease-in-out;
-        -o-transition: transform 1s ease-in-out;
-        transition: transform 1s ease-in-out;
+        -webkit-transition: transform 0.8s ease-in-out;
+        -moz-transition: transform 0.8s ease-in-out;
+        -ms-transition: transform 0.8s ease-in-out;
+        -o-transition: transform 0.8s ease-in-out;
+        transition: transform 0.8s ease-in-out;
       }
       body.move .top, body.move .bottom  {
-        -webkit-transition: top 0.8s linear;
-        -moz-transition: top 0.8s linear;
-        -ms-transition: top 0.8s linear;
-        -o-transition: top 0.8s linear;
-        transition: top 0.8s linear;
+        -webkit-transition: top 0.5s linear;
+        -moz-transition: top 0.5s linear;
+        -ms-transition: top 0.5s linear;
+        -o-transition: top 0.5s linear;
+        transition: top 0.5s linear;
       }
       body.move .top {
         top: 14vh;
@@ -107,11 +107,11 @@
         -ms-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
         -o-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
         transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
-        -webkit-transition: transform 1s ease-in-out;
-        -moz-transition: transform 1s ease-in-out;
-        -ms-transition: transform 1s ease-in-out;
-        -o-transition: transform 1s ease-in-out;
-        transition: transform 1s ease-in-out;
+        -webkit-transition: transform 0.5s ease-in-out;
+        -moz-transition: transform 0.5s ease-in-out;
+        -ms-transition: transform 0.5s ease-in-out;
+        -o-transition: transform 0.5s ease-in-out;
+        transition: transform 0.5s ease-in-out;
       }
     </style>
   </head>
@@ -124,7 +124,7 @@
         <p class="bottom">
           <a href="http://camplight.net" title="Camplight" target="_blank" id="c">C</a><!--
           --><a href="https://github.com/krasiyan" target="_blank" title="Github" id="o">O</a><!--
-          --><a href="#" title="I code" id="d">D</a><!--
+          --><a href="#" title="Krasiyan Nedelchev" id="d">D</a><!--
           --><a href="mailto:hello@krasiyan.com" title="Email" id="e">E</a>
         </p>
       </div>
@@ -140,9 +140,9 @@
         }
       }
       var keystrokes = function() {
-        var letters = ["i", "c", "o", "d", "e"];
-        var maxDuration = 280;
-        var minDuration = 200;
+        var letters = ["i", "c", "o", "e"];
+        var maxDuration = 350;
+        var minDuration = 250;
         var duration = maxDuration;
         var idx = 0;
         var prevIdx = 0;
@@ -159,10 +159,14 @@
         };
         var nextLetterInterval = setInterval(nextLetter, duration);
       };
-      setTimeout(animateStep("rotate"), 1000);
-      setTimeout(animateStep("move"), 2000);
-      setTimeout(animateStep("scale"), 3000);
-      setTimeout(keystrokes, 4000);
+
+      setTimeout(animateStep("rotate"), 2000);
+      setTimeout(animateStep("move"), 2800);
+      setTimeout(animateStep("scale"), 3300);
+      setTimeout(keystrokes, 3800);
+      setTimeout(function () {
+        document.getElementById("d").className = "mhover";
+      }, 10000);
     </script>
   </body>
 </html>

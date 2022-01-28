@@ -29,6 +29,7 @@
         display: flex;
         flex-direction: column;
         font-family: monospace;
+        font-size: 30px;
         height: 100%;
         justify-content: space-between;
         width: 100%;
@@ -36,14 +37,13 @@
       .intro {
         text-align: center;
         width: 90%;
-        font-size: 30px;
+        font-size: 1em;
       }
       .intro .large {
-        font-size: 60px;
-        line-height: 1;
+        font-size: 2em;
       }
       .intro .small {
-        font-size: 20px;
+        font-size: 0.75em;
       }
       .links {
         list-style: none;
@@ -53,7 +53,6 @@
       }
       .links li {
         display: inline-block;
-        font-size: 100px;
         margin: 40px;
       } 
       .links a {
@@ -64,18 +63,12 @@
         opacity: 0.5
       }
       .avatar {
-        height: 100px;
+        height: 20vh;
       }
       
       @media screen and (max-width: 576px) {
-        .intro {
+        .content {
           font-size: 20px;
-        }
-        .intro .large {
-          font-size: 40px;
-        }
-        .intro .small {
-          font-size: 15px;
         }
         .links li {
           margin: 20px;
@@ -87,7 +80,6 @@
     <div class="content">
       <p class="intro">
         Hi,</br>
-        </br>
         <span class="large">I'm Krasiyan</span></br>
         <span class="small">(you can call me Krasi)</span></br>
         </br>
@@ -100,7 +92,7 @@
             title="LinkedIn"
             accesskey="i"
           >
-            <i class="fa-brands fa-linkedin"></i>
+            <i class="fa-brands fa-linkedin fa-5x fa-fw"></i>
           </a>
         </li>
         <li>
@@ -109,7 +101,7 @@
             title="GitHub"
             accesskey="o"
           >
-            <i class="fa-brands fa-github"></i>
+            <i class="fa-brands fa-github-square fa-5x fa-fw"></i>
           </a>
         </li>
         <li>
@@ -118,7 +110,7 @@
             title="Twitter"
             accesskey="t"
           >
-            <i class="fa-brands fa-twitter"></i>
+            <i class="fa-brands fa-twitter-square fa-5x fa-fw"></i>
           </a>
         </li>
         <li>
@@ -127,7 +119,7 @@
             title="Email"
             accesskey="e"
           >
-            <i class="fa fa-envelope"></i>
+            <i class="fa fa-square-envelope fa-5x fa-fw"></i>
           </a>
         </li>
       </ul>

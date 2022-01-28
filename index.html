@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8">
-    <meta name="description" content="Krasiyan - I code">
+    <meta name="description" content="Krasiyan Nedelchev">
     <meta name="keywords" content="krasiyan nedelchev">
     <meta name="author" content="Krasiyan Nedelchev">
     <meta name="google-site-verification" content="znfPwGQlQmCEhvs9u-dIgKEiq3qFeKUfLHPH5WAnMT0" />
@@ -13,160 +13,129 @@
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
     <link rel="manifest" href="/site.webmanifest">
     <link rel="mask-icon" href="/safari-pinned-tab.svg" color="#000000">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="apple-mobile-web-app-title" content="krasiyan.com">
     <meta name="application-name" content="krasiyan.com">
     <meta name="msapplication-TileColor" content="#ffffff">
     <meta name="theme-color" content="#ffffff">
-    <link href='https://fonts.googleapis.com/css?family=Tinos:700' rel='stylesheet' type='text/css'>
     <style>
       body, html {
         height: 100%;
-        overflow: hidden;
+        margin: 0;
       }
-      #wrapper {
-        display: table;
-        width: 100%;
+      .content {
+        align-items: center;
+        display: flex;
+        flex-direction: column;
+        font-family: monospace;
         height: 100%;
+        justify-content: space-between;
+        width: 100%;
       }
-      #content {
-        margin: 0 auto;
-        display: table-cell;
-        vertical-align: middle;
+      .intro {
+        text-align: center;
+        width: 90%;
+        font-size: 30px;
+      }
+      .intro .large {
+        font-size: 60px;
+        line-height: 1;
+      }
+      .intro .small {
+        font-size: 20px;
+      }
+      .links {
+        list-style: none;
+        margin: 0;
+        padding: 0;
         text-align: center;
       }
-      .top, .bottom {
-        font-family: 'Tinos';
-        font-weight: 700;
-        display: block;
-        margin: 0;
-        position: relative;
-        top: 0px;
-      }
-      .top {
-        font-size: 28vh;
-      }
-      .bottom {
-        font-size: 14vh;
-      }
-      a {
+      .links li {
+        display: inline-block;
+        font-size: 100px;
+        margin: 40px;
+      } 
+      .links a {
         color: black;
         text-decoration: none;
-        margin: 0 10px;
-        display: inline-block;
       }
-      #i:hover, #i.mhover {
-        color: #0077B5;
+      .links a:hover {
+        opacity: 0.5
       }
-      #c:hover, #c.mhover  {
-        color: #ED1C24;
+      .avatar {
+        height: 100px;
       }
-      #o:hover, #o.mhover  {
-        color: #767676;
-      }
-      #d:hover, #d.mhover  {
-        color: transparent;
-        background-image: url(me.png);
-        background-image:
-          linear-gradient(transparent, transparent),
-          url(me.svg);
-        background-repeat: no-repeat;
-        background-position: center 30%;
-        background-size: 100%;
-      }
-      #e:hover, #e.mhover {
-        color: #34A853;
-      }
-      body.rotate #i {
-        -webkit-transform: rotate(90deg);
-        -moz-transform: rotate(90deg);
-        -ms-transform: rotate(90deg);
-        -o-transform: rotate(90deg);
-        transform: rotate(90deg);
-        -webkit-transition: transform 0.8s ease-in-out;
-        -moz-transition: transform 0.8s ease-in-out;
-        -ms-transition: transform 0.8s ease-in-out;
-        -o-transition: transform 0.8s ease-in-out;
-        transition: transform 0.8s ease-in-out;
-      }
-      body.move .top, body.move .bottom  {
-        -webkit-transition: top 0.5s linear;
-        -moz-transition: top 0.5s linear;
-        -ms-transition: top 0.5s linear;
-        -o-transition: top 0.5s linear;
-        transition: top 0.5s linear;
-      }
-      body.move .top {
-        top: 14vh;
-      }
-      body.move .bottom {
-        top: -22vh;
-      }
-      body.scale #i {
-        -webkit-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
-        -moz-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
-        -ms-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
-        -o-transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
-        transform: scaleX(1.8) scaleY(0.8) rotate(90deg);
-        -webkit-transition: transform 0.5s ease-in-out;
-        -moz-transition: transform 0.5s ease-in-out;
-        -ms-transition: transform 0.5s ease-in-out;
-        -o-transition: transform 0.5s ease-in-out;
-        transition: transform 0.5s ease-in-out;
+      
+      @media screen and (max-width: 576px) {
+        .intro {
+          font-size: 20px;
+        }
+        .intro .large {
+          font-size: 40px;
+        }
+        .intro .small {
+          font-size: 15px;
+        }
+        .links li {
+          margin: 20px;
+        }
       }
     </style>
   </head>
   <body>
-    <div id="wrapper">
-      <div id="content">
-        <p class="top">
-          <a href="https://www.linkedin.com/in/krasiyan" target="_blank" title="LinkedIn" id="i">I</a>
-        </p>
-        <p class="bottom">
-          <a href="http://camplight.net" title="Camplight" target="_blank" id="c">C</a><!--
-          --><a href="https://github.com/krasiyan" target="_blank" title="Github" id="o">O</a><!--
-          --><a href="#" title="Krasiyan Nedelchev" id="d">D</a><!--
-          --><a href="mailto:hello@krasiyan.com" title="Email" id="e">E</a>
-        </p>
-      </div>
+    <div class="content">
+      <p class="intro">
+        Hi,</br>
+        </br>
+        <span class="large">I'm Krasiyan</span></br>
+        <span class="small">(you can call me Krasi)</span></br>
+        </br>
+        I am a senior software engineer by trade and a problem solver by heart.
+      </p>
+      <ul class="links">
+        <li>
+          <a
+            href="https://linkedin.com/in/krasiyan"
+            title="LinkedIn"
+            accesskey="i"
+          >
+            <i class="fa-brands fa-linkedin"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://github.com/krasiyan"
+            title="GitHub"
+            accesskey="o"
+          >
+            <i class="fa-brands fa-github"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="https://twitter.com/krasiyan"
+            title="Twitter"
+            accesskey="t"
+          >
+            <i class="fa-brands fa-twitter"></i>
+          </a>
+        </li>
+        <li>
+          <a
+            href="mailto:hello@krasiyan.com"
+            title="Email"
+            accesskey="e"
+          >
+            <i class="fa fa-envelope"></i>
+          </a>
+        </li>
+      </ul>
+      <img
+        class="avatar"
+        src="me.svg"
+        alt="my avatar"
+      />
     </div>
-    <script type="text/javascript">
-      function getRandomNumberInRange(min, max) {
-        return Math.floor(Math.random() * (max - min + 1)) + min;
-      };
-
-      var animateStep = function(animateClass) {
-        return function() {
-          document.body.className += " " + animateClass;
-        }
-      }
-      var keystrokes = function() {
-        var letters = ["i", "c", "o", "e"];
-        var maxDuration = 350;
-        var minDuration = 250;
-        var duration = maxDuration;
-        var idx = 0;
-        var prevIdx = 0;
-
-        var nextLetter = function() {
-          idx = getRandomNumberInRange(0, letters.length - 1);
-          document.getElementById(letters[idx]).className = "mhover";
-          document.getElementById(letters[prevIdx]).className = "";
-          prevIdx = idx;
-
-          duration = getRandomNumberInRange(minDuration, maxDuration);
-          clearInterval(nextLetterInterval);
-          nextLetterInterval = setInterval(nextLetter, duration);
-        };
-        var nextLetterInterval = setInterval(nextLetter, duration);
-      };
-
-      setTimeout(animateStep("rotate"), 2000);
-      setTimeout(animateStep("move"), 2800);
-      setTimeout(animateStep("scale"), 3300);
-      setTimeout(keystrokes, 3800);
-      setTimeout(function () {
-        document.getElementById("d").className = "mhover";
-      }, 10000);
-    </script>
   </body>
 </html>
